@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Earth: History</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="WebIcon.png">
+
+    <style>
+        h1{
+            color: orange;
+        }
+
+        p{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Current History:</h1>
+    <p id="history"></p>
+
+    <script>
+        const currentHistory = document.getElementById("history");
+
+        for(let i of Array(localStorage.getItem("history"))){
+            currentHistory.innerText = `${i.replaceAll(",", "\n\n")}`;
+        }
+
+        document.body.style.backgroundColor = localStorage.getItem("mode");
+        setInterval(() => {
+            document.body.style.backgroundColor = localStorage.getItem("mode");
+        }, 250);
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+button{
+    cursor: pointer;
+}
+
+#mode{
+    user-select: none;
+    background-color: gray;
+
+    position: absolute;
+    left: 10px;
+    top: 25px;
+}
+
+#Earth{
+    user-select: none;
+    width: 380px;
+
+    position: absolute;
+    left: 450px;
+    top: 150px;
+}
+
+#search{
+    width: 800px;
+    font-size: 1.5em;
+
+    position: absolute;
+    left: 280px;
+    top: 300px;
+}
+
+#settings{
+    user-select: none;
+    position: absolute;
+    left: 100px;
+    top: 25px;
+}
+
+#settings2{
+    background-color: gray;
+}
+
+#explore{
+    font-size: 2.3em;
+
+    color: blue;
+
+    position: absolute;
+    left: 50px;
+    top: 1000px;
+}
+
+#end{
+    position: absolute;
+    left: 10px;
+    top: 1800px;
+}
+
+#Images{
+    user-select: none;
+    width: 300px;
+
+    position: absolute;
+    left: 800px;
+    top: 900px;
+}

@@ -1,0 +1,16 @@
+const images = website.getElement.byId("Images");
+
+
+async function change(){
+    const allImages = ["Dog", "Cat", "Earth", "Chess", "Computer", "wikipedia", "TV", "Brain", "Clock", "HTML", "CSS",
+    "JavaScript", "Fruits", "ISS", "Space", "School", "Duolingo", "Playground", "Venus", "Movie", "YouTube",
+    "Airplane", "Book"];
+
+    const wiki = await getExtension("wikipedia");
+    const x = await wiki.APIsearch(Arithmetic.randChoice(allImages));
+
+    images.src = x.thumbnail.source;
+    images.style.backgroundColor = storage.local.getItem("mode");
+}
+
+waitAndLoop(() => change(), 350);

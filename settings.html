@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Earth: Settings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="WebIcon.png">
+
+    <style>
+        p{
+            color: orange;
+            font-size: 1.5em;
+        }
+
+        span{
+            cursor: pointer;
+        }
+
+        h1{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Engine:</h1>
+
+    <p>whenever you search something, opens the search engine.</p>
+    <p id="current search engine"></p>
+    <p><span style="color: blue;" onclick="editSearchEngine()">Click here</span> to edit this.</p>
+    
+    <h1>History:</h1>
+    
+    <p>Go to <span style="color: blue;" onclick="window.open('history.html', '_self')">history</span> to see all you things that you search for.</p>
+    <p><span style="color: red;" onclick="if(confirm('Are you sure?')){localStorage.setItem('history', '')}">Click here</span> to clear all history</p>
+
+    <script>
+    const currentSearchEngine = document.getElementById("current search engine");
+    currentSearchEngine.innerText = `Current search engine: ${localStorage.getItem("search engine")}`;
+
+    function editSearchEngine(){
+        const url = window.prompt("Edit Search Engine:\n1. Make sure it has http:// or https://\n2. Make sure it has %s");
+
+        if((!url.trim()) || (url === null)){
+            return;
+        }
+
+        localStorage.setItem("search engine", url);
+    }
+
+    document.body.style.backgroundColor = localStorage.getItem("mode");
+    setInterval(() => {
+        document.body.style.backgroundColor = localStorage.getItem("mode");
+        currentSearchEngine.innerText = `Current search engine: ${localStorage.getItem("search engine")}`;
+    }, 250);
+    </script>
+</body>
+</html>
