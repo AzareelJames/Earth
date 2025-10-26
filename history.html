@@ -23,6 +23,7 @@
 
     <script>
         const currentHistory = document.getElementById("history");
+        currentHistory.reverse();
 
         for(let i of Array(localStorage.getItem("history"))){
             currentHistory.innerText = `${i.replaceAll(",", "\n\n")}`;
@@ -34,4 +35,5 @@
         }, 250);
     </script>
 </body>
+
 </html>
